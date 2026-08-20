@@ -19,6 +19,10 @@ function shuffle(array) {
 }
 
 export function createBoard(cardCount) {
+    // Tyhjätään vanhat kortit ja lisätään muuttujat
+    gameBoard.innerHTML = '';
+    resetBoard();
+
     const selectedCards = allCards.slice(0, cardCount / 2);
     const cards = [...selectedCards, ...selectedCards];
     shuffle(cards);
