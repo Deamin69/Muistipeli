@@ -1,5 +1,7 @@
 import { createCardElement, flipCard } from './card.js';
 
+import { stopTimer } from './game.js';
+
 const allCards = [
     '🍎', '🍐', '🍒', '🍉', '🍇', '🍓', '🍌', '🍍', '🥝', '🥥', '🍑', '🍈', '🍋', '🍊', '🍏', '🍅'
 ];
@@ -61,9 +63,16 @@ function checkForMatch() {
         unflipCards();
     }
 }
-
+// täsmäävä korttipari
 function disableCards() {
     resetBoard();
+
+    const allCardsCount = gameBoard.children.length;
+    const flippedCardsCount = document.querySelectorAll('.flipped').length;
+
+    if (flippedCardsCount === allCardsCount && allCardsCount > 0) {
+        stopTimer();
+    }
 }
 
 function unflipCards() {

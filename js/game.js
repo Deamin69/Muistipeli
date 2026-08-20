@@ -36,3 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createBoard(16);
     startTimer();
 });
+
+export function stopTimer() {
+    clearInterval(timerInterval);
+}

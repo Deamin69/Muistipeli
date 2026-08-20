@@ -1,30 +1,140 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0);
+    color: #334155;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
+
+h1 {
+    font-family: 'fredoka', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #05705e, #e73aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#game-controls {
+    background: #ffffff;
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+label {
+    font-weight: 500;
+    color: #475569;
+}
+
+select {
+    padding: 8px 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid #cbd5e1;
+    background-color: #f8fafc;
+    color: #1e293b;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus {
+    border-color: #e73aed;
+}
+
+/*Nappi */
+button {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 9px 18px;
+    background: linear-gradient(135deg, #1ab385, #05775e);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #04685b, #0a7c64);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 235, 176, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/*ajastin alusta*/
+
+#timer-display {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #095a4c;
+    background: #eff6ff;
+    border: 2px solid #bfdbfe;
+    padding: 8 px 22px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+#timer {
+    font-size: 1.3rem;
+    color: #b621bb;
+}
+
+/*lauta*/
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-gap: 10px;
+    grid-template-columns: repeat(4, 85px);
+    gap: 14px;
+    justify-content: center;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
-    background-color: #ccc;
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(135deg, #139e80, #045e59);
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 38px;
     cursor: pointer;
+    user-select: none;
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.2);
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
 }
 
 .card.flipped {
-    background-color: #fff;
+    background-color: #ffffff;
+    border: 3px solid #cbd5e1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
