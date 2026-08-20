@@ -8,59 +8,72 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 
+// Ongelma 4
 function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
+    for (let i = array.lenght - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
 
 export function createBoard(cardCount) {
     const selectedCards = allCards.slice(0, cardCount / 2);
     const cards = [...selectedCards, ...selectedCards];
     shuffle(cards);
+
     cards.forEach(card => {
         const cardElement = createCardElement(card);
-        cardElement.addEventListener('click', () => flipCard(cardElement, handleCardFlip));
+
+        cardElement.addEventListener('click', () => {
+            // Ongelma 1&2
+            if (lockBoard) return;
+            if (cardElement === firstCard) return;
+            if (cardElement.classList.contains('flipped')) return;
+
+            flipCard(cardElement, handleCardFlip);
+        });
         gameBoard.appendChild(cardElement);
     });
 }
 
 function handleCardFlip(cardElement) {
-    if (lockBoard) return;
-    if (cardElement === firstCard) return;
-
-    cardElement.classList.add('flipped');
-    cardElement.textContent = cardElement.dataset.card;
-
     if (!firstCard) {
         firstCard = cardElement;
         return;
     }
 
     secondCard = cardElement;
+    lockBoard = true; // Laudan lukitus kun kaksi korttia on avattu
     checkForMatch();
 }
 
 function checkForMatch() {
-    let isMatch = firstCard.dataset.card === secondCard.dataset.card;
-    isMatch ? disableCards() : unflipCards();
+    if (firstCard.dataset.card === secondCard.dataset.card) {
+        disableCards();
+    }
+    else {
+        unflipCards();
+    }
 }
 
 function disableCards() {
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
     resetBoard();
 }
 
 function unflipCards() {
-    lockBoard = true;
     setTimeout(() => {
         firstCard.classList.remove('flipped');
         secondCard.classList.remove('flipped');
         firstCard.textContent = '';
         secondCard.textContent = '';
         resetBoard();
-    }, 1500);
+    }, 1000);
 }
 
 function resetBoard() {
-    [firstCard, secondCard, lockBoard] = [null, null, false];
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
 }
