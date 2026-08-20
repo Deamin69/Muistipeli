@@ -1,5 +1,26 @@
 import { createBoard } from './board.js';
 
+//ajastin
+let timerInterval = null;
+let seconds = 0;
+
+function startTimer() {
+    clearInterval(timerInterval);
+    seconds = 0;
+
+    const timerElement = document.getElementById('timer');
+    if (timerElement) {
+        timerElement.textContent = seconds;
+    }
+    // laskurin käynnistys
+    timerInterval = setInterval(() => {
+        seconds++;
+        if (timerElement) {
+            timerElement.textContent = seconds;
+        }
+    }, 1000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const restartBtn = document.getElementById('restart-btn');
     const cardSelect = document.getElementById('card-select');
@@ -8,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     restartBtn.addEventListener('click', () => {
         const selectedCount = parseInt(cardSelect.value, 10);
         createBoard(selectedCount);
+        startTimer();
     });
 
-    // peli luodaan automaattisesti oletusarvolla (16 korttia)
+    // Aloitetaan peli ja ajastin sivun latautuessa
     createBoard(16);
+    startTimer();
 });
