@@ -10,7 +10,19 @@
 
 <body>
     <h1>Muistipeli</h1>
-    <button id="restart-btn">Aloita alusta</button>
+
+    <div id="game-controls">
+        <label for="card-select">Valitse korttien määrä </label>
+        <select id="card-select">
+            <option value="4">4</option>
+            <option value="8">8</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+        </select>
+
+        <button id="restart-btn">Aloita peli</button>
+    </div>
+
     <div id="game-board"></div>
     <script type="module" src="./js/game.js"></script>
 </body>
