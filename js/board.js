@@ -67,6 +67,7 @@ function checkForMatch() {
 }
 // täsmäävä korttipari
 function disableCards() {
+    resetBoard();
     registerPairFound();
 
     const allCardsCount = gameBoard.children.length;
