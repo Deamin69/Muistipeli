@@ -15,7 +15,7 @@ h1 {
     font-family: 'fredoka', sans-serif;
     font-size: 2.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #05705e, #eb6416);
+    background: linear-gradient(135deg, #5e0570, #f5752b);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -56,7 +56,7 @@ select {
 }
 
 select:focus {
-    border-color: #eb6416;
+    border-color: #0e0c0b;
 }
 
 /*Nappi */
