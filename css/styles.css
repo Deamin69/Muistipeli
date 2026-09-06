@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #dbb884 0%, #8fe987);
+    background: linear-gradient(135deg, #d7afd8 0%, #e6bd64);
     color: #334155;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ h1 {
     font-family: 'fredoka', sans-serif;
     font-size: 2.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #5e0570, #f5752b);
+    background: linear-gradient(135deg, #5e0570, #f36b1c);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -66,7 +66,7 @@ button {
     font-weight: 600;
     letter-spacing: 0.5px;
     padding: 9px 18px;
-    background: linear-gradient(135deg, #1ab385, #05775e);
+    background: linear-gradient(135deg, #5e0570, #e29467);
     color: white;
     border: none;
     border-radius: 10px;
@@ -76,7 +76,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(135deg, #04685b, #0a7c64);
+    background: linear-gradient(135deg, #8f0688, #ebba19);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(37, 235, 176, 0.4);
 }
@@ -102,7 +102,7 @@ button:active {
 
 #timer {
     font-size: 1.3rem;
-    color: #b621bb;
+    color: #080808;
 }
 
 /*lauta*/
@@ -219,7 +219,7 @@ button:active {
 .modal-content button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #10b981;
+    background-color: #5e0570;
     color: white;
     border: none;
     border-radius: 8px;
