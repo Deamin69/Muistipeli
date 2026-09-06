@@ -86,13 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const restartModalBtn = document.getElementById('restart-modal-btn');
 
     // Nappia painamalla aloitetaan peli
-    restartBtn.addEventListener('click', () => {
-        const selectedCount = parseInt(cardSelect.value, 10);
-        startNewGame(selectedCount);
-    });
-
     if (restartBtn) {
         restartBtn.addEventListener('click', () => {
+            const selectedCount = parseInt(cardSelect.value, 10);
+            startNewGame(selectedCount);
+        });
+    }
+
+    if (restartModalBtn) {
+        restartModalBtn.addEventListener('click', () => {
             const selectedCount = parseInt(cardSelect.value, 10);
             startNewGame(selectedCount);
         });
