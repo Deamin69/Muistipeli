@@ -148,6 +148,14 @@ button:active {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    -webkit-tap-highlight-color;
+    outline: none;
+}
+
+.card:focus,
+.card:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 600px) {
