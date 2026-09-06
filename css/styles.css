@@ -139,3 +139,30 @@ button:active {
     border: 3px solid #cbd5e1;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
+
+/* Mukavuutta mobiili käyttöön */
+.card {
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        width: 65px;
+        height: 65px;
+        font-size: 1.8rem;
+    }
+
+    #game-board {
+        gap: 8px;
+    }
+}
