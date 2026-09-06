@@ -100,3 +100,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const initialCount = parseInt(cardSelect.value, 10);
     startNewGame(initialCount);
+});
