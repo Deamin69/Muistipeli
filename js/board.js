@@ -2,7 +2,7 @@ import { createCardElement, flipCard } from './card.js';
 import { registerMove, registerPairFound } from './game.js';
 
 const allCards = [
-    '🍎', '🍐', '🍒', '🍉', '🍇', '🍓', '🍌', '🍍', '🥝', '🥥', '🍑', '🍈', '🍋', '🍊', '🍏', '🍅'
+    '🦊', '🐈‍⬛', '🙊', '🦌', '🦧', '🐅', '🐀', '🦬', '🦔', '🦇', '🐺', '🐦‍⬛', '🦨', '🫎', '🪰', '🦣'
 ];
 const gameBoard = document.getElementById('game-board');
 let firstCard = null;
