@@ -15,7 +15,7 @@ h1 {
     font-family: 'fredoka', sans-serif;
     font-size: 2.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #5e0570, #f36b1c);
+    background: linear-gradient(135deg, #5e0570, #d45912);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -213,7 +213,7 @@ button:active {
 
 .modal-content h2 {
     margin-top: 0;
-    color: #10b981;
+    color: #097450;
 }
 
 .modal-content button {
