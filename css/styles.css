@@ -228,3 +228,16 @@ button:active {
 .modal-content button:hover {
     background-color: #059669;
 }
+
+#game-board {
+    perspective: 1000px;
+}
+
+.card {
+    transition: transform 0.4s ease, background-color 0.2s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg) scaleX(-1);
+    background-color: #ffffff;
+}
