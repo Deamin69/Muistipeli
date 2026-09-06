@@ -1,6 +1,5 @@
 import { createCardElement, flipCard } from './card.js';
-
-import { stopTimer } from './game.js';
+import { registerMove, registerPairFound } from './game.js';
 
 const allCards = [
     '🍎', '🍐', '🍒', '🍉', '🍇', '🍓', '🍌', '🍍', '🥝', '🥥', '🍑', '🍈', '🍋', '🍊', '🍏', '🍅'
@@ -52,6 +51,9 @@ function handleCardFlip(cardElement) {
 
     secondCard = cardElement;
     lockBoard = true; // Laudan lukitus kun kaksi korttia on avattu
+
+    registerMove();
+
     checkForMatch();
 }
 
@@ -65,7 +67,7 @@ function checkForMatch() {
 }
 // täsmäävä korttipari
 function disableCards() {
-    resetBoard();
+    registerPairFound();
 
     const allCardsCount = gameBoard.children.length;
     const flippedCardsCount = document.querySelectorAll('.flipped').length;

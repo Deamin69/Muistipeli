@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -31,7 +33,22 @@
         <button id="restart-btn">Aloita peli</button>
     </div>
 
-    <p id="timer-display">Aika: <span id="timer">0</span> s</p>
+    <div class="game-info">
+        <span>Aika: <strong id="timer">0</strong></span>
+        <span style="margin: 0 10px;">|</span>
+        <span>Siirrot: <strong id="moves">0</strong></span>
+    </div>
+
+    <!-- Voittoruutu -->
+    <div id="win-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎊 Hyvä sinä! 🎊</h2>
+            <p>Löysit kaikki korttiparit 😁👍</p>
+            <p>Aika: <strong id="final-time">0</strong> s</p>
+            <p>Siirrot: <strong id="final-moves">0</strong></p>
+            <button id="restart-modal-btn">Pelaa uudelleen</button>
+        </div>
+    </div>
 
 
     <div id="game-board"></div>
