@@ -148,7 +148,7 @@ button:active {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    -webkit-tap-highlight-color;
+    -webkit-tap-highlight-color: transparent;
     outline: none;
 }
 
