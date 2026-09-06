@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #d7afd8 0%, #e6bd64);
+    background: linear-gradient(135deg, #e8bfe9 0%, #f0c76f);
     color: #334155;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ select {
     border-radius: 8px;
     border: 2px solid #cbd5e1;
     background-color: #f8fafc;
-    color: #1e293b;
+    color: #0e0e0f;
     cursor: pointer;
     outline: none;
     transition: border-color 0.2s;
@@ -71,14 +71,14 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(13, 13, 14, 0.753);
     transition: all 0.2s ease;
 }
 
 button:hover {
     background: linear-gradient(135deg, #8f0688, #ebba19);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(37, 235, 176, 0.4);
+    box-shadow: 0 6px 16px rgba(8, 8, 8, 0.664);
 }
 
 button:active {
@@ -133,7 +133,7 @@ button:active {
 
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 8px 18px rgba(14, 15, 15, 0.918);
 }
 
 .card.flipped {
