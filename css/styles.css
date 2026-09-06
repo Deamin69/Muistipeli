@@ -117,7 +117,7 @@ button:active {
 .card {
     width: 85px;
     height: 85px;
-    background-image: url('kortti-tausta.png');
+    background-image: url('kortti-tausta.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 14px;
