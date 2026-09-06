@@ -12,7 +12,7 @@ let lockBoard = false;
 
 // Ongelma 4
 function shuffle(array) {
-    for (let i = array.lenght - 1; i > 0; i--) {
+    for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = array[i];
         array[i] = array[j];
@@ -76,11 +76,19 @@ function disableCards() {
 }
 
 function unflipCards() {
+    const card1 = firstCard;
+    const card2 = secondCard;
+
     setTimeout(() => {
-        firstCard.classList.remove('flipped');
-        secondCard.classList.remove('flipped');
-        firstCard.textContent = '';
-        secondCard.textContent = '';
+        if (card1) {
+            card1.classList.remove('flipped');
+            card1.textContent = '';
+        }
+
+        if (card2) {
+            card2.classList.remove('flipped');
+            card2.textContent = '';
+        }
         resetBoard();
     }, 1000);
 }

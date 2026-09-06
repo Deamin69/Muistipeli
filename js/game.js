@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Aloitetaan peli ja ajastin sivun latautuessa
-    createBoard(16);
+    const initialCount = parseInt(cardSelect.value, 10);
+    createBoard(initialCount);
     startTimer();
 });
 
