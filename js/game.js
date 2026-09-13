@@ -1,4 +1,5 @@
 import { createBoard } from './board.js';
+import { playSound, toggleMute } from './sound.js';
 
 //ajastin
 let timerInterval = null;
@@ -45,6 +46,8 @@ export function registerMove() {
 // Parin löytyminen ja voitto tarkistus
 export function registerPairFound() {
     matchedPairs++;
+    playSound('match');
+
     if (matchedPairs === totalPairs) {
         onGameWon();
     }
@@ -53,6 +56,7 @@ export function registerPairFound() {
 // Voitto ja konfetit
 function onGameWon() {
     stopTimer();
+    playSound('win');
 
     if (typeof confetti === 'function') {
         confetti({
@@ -97,6 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
         restartModalBtn.addEventListener('click', () => {
             const selectedCount = parseInt(cardSelect.value, 10);
             startNewGame(selectedCount);
+        });
+    }
+
+    const soundBtn = document.getElementById('sound-btn');
+    if (soundBtn) {
+        soundBtn.addEventListener('click', () => {
+            const muted = toggleMute();
+            soundBtn.textContent = muted ? '🔇 Äänet pois' : '🔉 Äänet';
         });
     }
 

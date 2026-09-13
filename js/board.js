@@ -1,5 +1,6 @@
 import { createCardElement, flipCard } from './card.js';
 import { registerMove, registerPairFound } from './game.js';
+import { playSound } from './sound.js';
 
 const allCards = [
     '🦊', '🐈‍⬛', '🙊', '🦌', '🦧', '🐅', '🐀', '🦬', '🦔', '🦇', '🐺', '🐦‍⬛', '🦨', '🫎', '🪰', '🦣'
@@ -37,6 +38,7 @@ export function createBoard(cardCount) {
             if (cardElement === firstCard) return;
             if (cardElement.classList.contains('flipped')) return;
 
+            playSound('flip');
             flipCard(cardElement, handleCardFlip);
         });
         gameBoard.appendChild(cardElement);
@@ -67,6 +69,7 @@ function checkForMatch() {
 }
 // täsmäävä korttipari
 function disableCards() {
+    playSound('match');
     resetBoard();
     registerPairFound();
 
@@ -75,6 +78,7 @@ function disableCards() {
 
     if (flippedCardsCount === allCardsCount && allCardsCount > 0) {
         stopTimer();
+        playSound('win');
     }
 }
 
